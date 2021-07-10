@@ -7,6 +7,7 @@ const app = express();
 
 // middleware
 app.use(express.static("public"));
+//turns any form request to an javascript object
 app.use(express.json());
 
 // view engine
