@@ -2,6 +2,7 @@ const { response } = require("express");
 const express = require("express");
 const mongoose = require("mongoose");
 const authRoutes = require("./routes/authRoutes");
+const cookieParser = require("cookie-parser");
 
 const app = express();
 
@@ -9,6 +10,7 @@ const app = express();
 app.use(express.static("public"));
 //turns any form request to an javascript object
 app.use(express.json());
+app.use(cookieParser());
 
 // view engine
 app.set("view engine", "ejs");
