@@ -36,13 +36,14 @@
                 headers:{'Content-Type':'application/json'}
             })
             const data= await res.json()
+            console.log(data)
             if(data.errors){
                 emailError.textContent = data.errors.email
                 passwordError.textContent = data.errors.password
             }
             if(data.user){
                 //redirect back to home page after sign up
-                // location.assign('/')
+                location.assign('/')
             }
         }catch(err){
             console.log(err)
